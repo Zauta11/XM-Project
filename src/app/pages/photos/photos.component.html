@@ -1,0 +1,13 @@
+<ng-container *ngIf="data else loading">
+    <div class="container">
+        <mat-card class="photos-card" *ngFor="let photo of data trackBy: trackByFn">
+            <img mat-card-image (click)="addToFavourites(photo)" src="{{photo.download_url}}" alt="random-images">
+        </mat-card>
+    </div>
+</ng-container>
+
+<ng-template #loading>
+    <div class="loader">
+        <mat-spinner color="warn"></mat-spinner>
+    </div>
+</ng-template>

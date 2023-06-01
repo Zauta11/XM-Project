@@ -1,0 +1,15 @@
+.images-card {
+    max-width: 400px;
+    margin: 15px;
+}
+
+.container {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container>* {
+    flex: 1 1 400px;
+}

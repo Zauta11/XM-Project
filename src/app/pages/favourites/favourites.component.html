@@ -1,0 +1,7 @@
+<ng-container *ngIf="favPhotos$ | async as favPhotos">
+    <div class="container">
+        <mat-card class="images-card" *ngFor="let image of favPhotos">
+            <img src="{{image.download_url}}" (click)="getImage(image) " alt="favourite-images">
+        </mat-card>
+    </div>
+</ng-container>
