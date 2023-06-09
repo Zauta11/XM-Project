@@ -16,13 +16,14 @@ export class FavouritesService {
     return this.imgList.asObservable();
   }
 
-  addToFavourite(newImage:Item): void  {
-    this.itemList.push(newImage);
-    this.imgList.next(this.itemList);
+  addToFavourite(newImage: Item): void  {
+   this.itemList = this.itemList.filter((item: { id: number }) => item.id !== newImage.id);
+   this.itemList.push(newImage);
+   this.imgList.next(this.itemList);
   }
   
   removeItem(img: Item): void  {
-    this.itemList = this.itemList?.filter((image: { id: number }) => image.id !== img.id);
+    this.itemList = this.itemList.filter((image: { id: number }) => image.id !== img.id);
     this.imgList.next(this.itemList);
 
   }
