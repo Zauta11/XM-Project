@@ -15,6 +15,7 @@ export class PhotosComponent {
   loading: boolean = false;
   data?: Item[];
 
+
   constructor(
     private readonly api: ApiService,
     private readonly fav: FavouritesService,
@@ -35,9 +36,10 @@ export class PhotosComponent {
 
   addToFavourites(item: Item): void  {
     this.fav.addToFavourite(item);
-    this.cdRef.markForCheck()
-    
+        
   }
+
+
 
   trackByFn(index: number, item: Item): number {
     return item.id;

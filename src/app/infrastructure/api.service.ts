@@ -12,6 +12,7 @@ export class ApiService {
 
   URL = "https://picsum.photos/v2/list";
 
+
   getData(): Observable <Item[]> {
     return this.http.get<Item[]>(this.URL);
   }

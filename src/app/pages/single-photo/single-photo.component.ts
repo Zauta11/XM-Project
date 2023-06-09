@@ -41,7 +41,7 @@ export class SinglePhotoComponent {
           })
         ).subscribe((res) => {
           this.data = res;
-          let index = this.data.findIndex((photo: {id: number}) => photo.id == this.photoId);
+          let index = this.data.findIndex((photo: {id: number}) => photo.id === this.photoId);
           index > -1 ? this.image = this.data[index] : 0;
           this.cdRef.markForCheck();
         })
@@ -49,11 +49,10 @@ export class SinglePhotoComponent {
 
       removeImage(item: Item): void {
         this.favService.removeItem(item);
-        alert("Image Removed Successfully !")
-        this.cdRef.markForCheck();
+        alert("Image Removed Successfully !");
         this.router.navigate(['favourites']);
       }
-    
+
 
 }
 

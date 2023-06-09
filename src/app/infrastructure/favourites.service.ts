@@ -10,25 +10,20 @@ export class FavouritesService {
   constructor() { }
 
   public itemList : any = [];
-  public productList = new BehaviorSubject<Item[]>([]);
+  public imgList = new BehaviorSubject<Item[]>([]);
 
   getData(): Observable<Item[]> {
-    return this.productList.asObservable();
+    return this.imgList.asObservable();
   }
 
-  setData(product: Item[]): void {
-    this.itemList.push(...product);
-    this.productList.next(product);
-  }
-
-  addToFavourite(product:Item): void  {
-    this.itemList.push(product);
-    this.productList.next(this.itemList);
+  addToFavourite(newImage:Item): void  {
+    this.itemList.push(newImage);
+    this.imgList.next(this.itemList);
   }
   
-  removeItem(product: Item): void  {
-    this.itemList = this.itemList?.filter((image: { id: number }) => image.id !== product.id);
-    this.productList.next(this.itemList);
+  removeItem(img: Item): void  {
+    this.itemList = this.itemList?.filter((image: { id: number }) => image.id !== img.id);
+    this.imgList.next(this.itemList);
 
   }
  

@@ -21,8 +21,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatButtonModule,
     MatProgressSpinnerModule
 
-    
-    
   ]
 })
 export class PhotosModule { }
